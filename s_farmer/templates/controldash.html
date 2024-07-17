@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="static/controldash.css">
+</head>
+<body>
+    <div class="grid-container">
+        <!--header-->
+        <header class="header">
+            <div class="search">
+                <form method="POST" action="/search_customer">
+                    
+                    <input type="text" id="search_input" class="srch" name="" placeholder="Enter member code">
+                    <a href="/search_customer"><button class="btn">Search</button></a>
+                </form>
+            </div>
+        </header>
+        <!--end header-->
+
+        <!--sidebar-->
+        <aside id="sidebar">
+            <div class="sidebar-title">
+                <div class="sidebar-brand">
+                    <h2>Control</h2>
+                </div>
+            </div>
+            <ul class="sidebar-list">
+                <li class="sidebar-list-items"> Advance </li>
+                <li class="sidebar-list-items"> Store </li>
+                <li class="sidebar-list-items"> AI </li>
+                <li class="sidebar-list-items"> Others </li>
+            </lu>
+        </aside>
+        <!--end sidebar-->
+
+        <!--main-->
+        <main class="main-container">
+            <div class="state">
+                <div class="main-cards">
+                    <div class="card">
+                        <div class="card-inner">
+                            <h3> <a href="">STATEMENT</a></h3>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <h3> <a href="">H/Q ADVANCE</a></h3>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <h3><a href="">BRANCH ADVANCE</a> </h3>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <h3> <a href="">STORE</a></h3>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <h3> <a href="">OTHERS</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="deductions">
+                <h2>DEDUCTIONS</h2>
+            </div>
+            <div class="statement">
+                <h2>STATEMENT</h2>
+                <div id="search_result">
+                    {% if customer %}
+                        <p>Member Code: <span id="member_code">{{ customer.member_code }}</span></p>
+                        <p>Member Name: <span id="member_name">{{ customer.member_name }}</span></p>
+                        <p>Member Kgs: <span id="meber_kgs">{{ customer.meber_kgs }}</span></p>
+                        <p>Route Name: <span id="route_name">{{ customer.route_name }}</span></p>
+                    {% else %}
+                        <p>No customer found.</p>
+                    {% endif %}
+                </div>
+            </div>
+            
+        </main>
+        <!--end main-->
+    </div>
+ 
+    
+</body>
+</html>
