@@ -1,7 +1,7 @@
 from flask import render_template, url_for, flash, redirect, jsonify, request
-from flaskblog import app
-from flaskblog.models import Customer
-from flaskblog.forms import SearchForm
+from s_farmer import app
+from s_farmer.models import Customer
+from s_farmer.forms import SearchForm
 
 
 @app.route("/")

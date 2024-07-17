@@ -7,4 +7,4 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///menuinfor.db'
 app.config['SECRET_KEY'] = 'graceJosphat'
 db = SQLAlchemy(app)
 
-from flaskblog import routes
+from s_farmer import routes
