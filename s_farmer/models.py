@@ -68,7 +68,7 @@ class Customer(db.Model, Base):
 # ... other models for other tables
 
 def load_data_from_excel(sheet_name, table_name):
-    data_file = "farmers.xlsx"
+    data_file = "s_farmer/farmers.xlsx"
     df = pd.read_excel(data_file, sheet_name=sheet_name)
 
     engine = create_engine('sqlite:///menuinfor.db')
